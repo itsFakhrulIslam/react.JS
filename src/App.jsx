@@ -19,6 +19,13 @@ function App() {
           <Device deviceName="laptop1" devicePrice="40000" />
           <Device deviceName="laptop2" devicePrice="50000" />
           <Device deviceName="laptop3" devicePrice="60000" />
+
+          <Resume candidateName="miraj" dept="al hadith" session="1st" />
+          <Resume candidateName="siraj" dept="al quran" session="2nd" />
+          <Resume candidateName="rayhan" dept="al fiq" session="1st" />
+          <Resume candidateName="rabbi" dept="Bangla" session="3rd" />
+          <Resume candidateName="rabbi" session="3rd" />
+          <Resume dept="Bangla" session="3rd" />
         </div>
       </section>
     </>
@@ -107,4 +114,28 @@ function Device(params) {
   );
 }
 
+//^ object destructuring
+// const resumeData = {candidateName: 'miraj', dept: 'al hadith', session: '1st'}
+// const { candidateName, dept, session } = resumeData;
+
+function Resume({ candidateName = "Unknown person", dept = "null", session }) {
+  // console.log(candidateName);
+  // console.log(dept);
+  // console.log(session);
+
+  return (
+    <div
+      style={{
+        marginTop: "30px",
+        border: "2px dotted yellow",
+        borderRadius: "10px",
+        padding: "40px",
+      }}
+    >
+      <h2>Name: {candidateName} </h2>
+      <p>Depart: {dept} </p>
+      <p>Year: {session} </p>
+    </div>
+  );
+}
 export default App;
