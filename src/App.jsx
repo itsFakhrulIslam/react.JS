@@ -1,4 +1,5 @@
 import "./App.css";
+import Task from "./Task";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
         <div>
           <h1>Lets Learn React Js</h1>
 
-          <TestPerson />
+          {/* <TestPerson />
 
           <Habit />
 
@@ -25,7 +26,13 @@ function App() {
           <Resume candidateName="rayhan" dept="al fiq" session="1st" />
           <Resume candidateName="rabbi" dept="Bangla" session="3rd" />
           <Resume candidateName="rabbi" session="3rd" />
-          <Resume dept="Bangla" session="3rd" />
+          <Resume dept="Bangla" session="3rd" /> */}
+
+          <Task taskName="do the work 0" taskIsDone={true} />
+          <Task taskName="do the work 1" taskIsDone={false} />
+          <Task taskName="do the work 2" taskIsDone={true} />
+          <Task taskName="do the work 3" taskIsDone={false} />
+          <Task taskName="do the work 4" taskIsDone={true} />
         </div>
       </section>
     </>
