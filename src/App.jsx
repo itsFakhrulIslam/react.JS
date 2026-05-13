@@ -6,11 +6,19 @@ function App() {
       <section id="center">
         <div>
           <h1>Lets Learn React Js</h1>
+
           <TestPerson />
+
           <Habit />
+
           <Technology name="miraj" feildTech="js" />
           <Technology name="siraj" feildTech="react" />
           <Technology name="piraj" feildTech="nextjs" />
+
+          <Device deviceName="laptop" devicePrice="30000" />
+          <Device deviceName="laptop1" devicePrice="40000" />
+          <Device deviceName="laptop2" devicePrice="50000" />
+          <Device deviceName="laptop3" devicePrice="60000" />
         </div>
       </section>
     </>
@@ -72,11 +80,29 @@ function Technology(props) {
         style={{
           fontSize: "1.5rem",
           color: "white",
-          marginTop:'10px'
+          marginTop: "10px",
         }}
       >
         technology: {props.feildTech}
       </p>
+    </div>
+  );
+}
+
+function Device(params) {
+  console.log(params);
+
+  return (
+    <div
+      style={{
+        marginTop: "30px",
+        border: "2px dashed yellow",
+        borderRadius: "10px",
+        padding: "40px",
+      }}
+    >
+      <h2>Device Name: {params.deviceName}</h2>
+      <p>Price: {params.devicePrice}</p>
     </div>
   );
 }
