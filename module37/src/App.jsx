@@ -1,4 +1,5 @@
 import "./App.css";
+import CountBtn from "./CountBtn";
 
 function App() {
   function handleClick() {
@@ -49,6 +50,8 @@ function App() {
               Pass params by click
             </button>
           </div>
+
+          <CountBtn />
         </div>
       </section>
     </>
