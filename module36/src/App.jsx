@@ -63,7 +63,7 @@ function App() {
     <>
       <section id="center">
         <div>
-          <h1>Lets Learn React Js</h1>
+          <h1>Learn ReactJs module36</h1>
 
           {/* <TestPerson />
 
