@@ -1,7 +1,64 @@
 import "./App.css";
+import Book from "./Book";
 import Task from "./Task";
+import TechName from "./TechName";
 
 function App() {
+  // const technologies = [
+  //   "html",
+  //   "css",
+  //   "tailwindCss",
+  //   "bootstrap",
+  //   "daysiUi",
+  //   "javascript",
+  //   "react",
+  // ];
+
+  const books = [
+    {
+      id: 0,
+      name: "html 0",
+      author_name: "miraj 0",
+      release_year: 2005,
+    },
+    {
+      id: 1,
+      name: "html 1",
+      author_name: "miraj 1",
+      release_year: 2006,
+    },
+    {
+      id: 2,
+      name: "html 2",
+      author_name: "miraj 2",
+      release_year: 2007,
+    },
+    {
+      id: 3,
+      name: "html 3",
+      author_name: "miraj 3",
+      release_year: 2008,
+    },
+    {
+      id: 4,
+      name: "html 4",
+      author_name: "miraj 4",
+      release_year: 2009,
+    },
+    {
+      id: 5,
+      name: "html 5",
+      author_name: "miraj 5",
+      release_year: 2010,
+    },
+    {
+      id: 6,
+      name: "html 6",
+      author_name: "miraj 6",
+      release_year: 2015,
+    },
+  ];
+
   return (
     <>
       <section id="center">
@@ -28,11 +85,21 @@ function App() {
           <Resume candidateName="rabbi" session="3rd" />
           <Resume dept="Bangla" session="3rd" /> */}
 
-          <Task taskName="do the work 0" taskIsDone={true} />
+          {/* <Task taskName="do the work 0" taskIsDone={true} />
           <Task taskName="do the work 1" taskIsDone={false} />
           <Task taskName="do the work 2" taskIsDone={true} />
           <Task taskName="do the work 3" taskIsDone={false} />
-          <Task taskName="do the work 4" taskIsDone={true} />
+          <Task taskName="do the work 4" taskIsDone={true} /> */}
+
+          {/* technology map */}
+          {/* {technologies.map((tech) => (
+            <TechName key={} fieldName={tech} />
+          ))} */}
+
+          {/* books map */}
+          {books.map((book) => (
+            <Book key={book.id} nameOfBook={book} />
+          ))}
         </div>
       </section>
     </>
