@@ -1,4 +1,5 @@
 import "./App.css";
+import Batsman from "./Batsman";
 import CountBtn from "./CountBtn";
 
 function App() {
@@ -52,6 +53,8 @@ function App() {
           </div>
 
           <CountBtn />
+
+          <Batsman />
         </div>
       </section>
     </>
