@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import "./App.css";
 import Batsman from "./Batsman";
 import CountBtn from "./CountBtn";
+import Users from "./Users";
 
 function App() {
   function handleClick() {
@@ -15,6 +17,11 @@ function App() {
     let result = num * 5;
     alert(result);
   };
+
+  // section for users
+  const fetchAllUsers = fetch(
+    "https://jsonplaceholder.typicode.com/posts",
+  ).then((res) => res.json());
 
   return (
     <>
@@ -55,6 +62,24 @@ function App() {
           <CountBtn />
 
           <Batsman />
+
+          {/* section for users */}
+          <Suspense
+            fallback={
+              <p
+                style={{
+                  marginTop: "30px",
+                  border: "2px dotted yellow",
+                  borderRadius: "10px",
+                  padding: "40px",
+                }}
+              >
+                users data coming...
+              </p>
+            }
+          >
+            <Users fetchUsers={fetchAllUsers} />
+          </Suspense>
         </div>
       </section>
     </>
