@@ -1,6 +1,12 @@
-import React from 'react'
+import React from "react";
+import { use } from "react";
 
-export default function Comments() {
+export default function Comments({ fetchComments }) {
+  console.log(fetchComments);
+
+  const dataFetched = use(fetchComments);
+  console.log(dataFetched[1].body);
+
   return (
     <div
       style={{
@@ -11,7 +17,7 @@ export default function Comments() {
       }}
     >
       <h1>Show All Comments</h1>
-      <p>Total Comments:{} </p>
+      <p>Total Comments: {dataFetched.length} </p>
     </div>
-  )
+  );
 }

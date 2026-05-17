@@ -112,7 +112,22 @@ function App() {
           </Suspense>
 
           {/* section for comments */}
-          <Comments />
+          <Suspense
+            fallback={
+              <p
+                style={{
+                  marginTop: "30px",
+                  border: "2px dotted yellow",
+                  borderRadius: "10px",
+                  padding: "40px",
+                }}
+              >
+                comments data coming...
+              </p>
+            }
+          >
+            <Comments fetchComments={fetchAllComments} />
+          </Suspense>
         </div>
       </section>
     </>
