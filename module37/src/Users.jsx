@@ -1,7 +1,8 @@
 import React, { use } from "react";
+import User from "./User";
 
 export default function Users({ fetchUsers }) {
-    console.log(fetchUsers);
+  console.log(fetchUsers);
 
   const dataFetched = use(fetchUsers);
 
@@ -16,6 +17,10 @@ export default function Users({ fetchUsers }) {
     >
       <h1>Show All Users</h1>
       <p>Total Users: {dataFetched.length} </p>
+
+      {dataFetched.map((user) => (
+        <User key={user.id} passUser={user} />
+      ))}
     </div>
   );
 }
