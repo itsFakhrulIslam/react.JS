@@ -6,6 +6,7 @@ import Users from "./Users";
 import Posts from "./Posts";
 import Comments from "./Comments";
 import Albums from "./Albums";
+import Photos from "./Photos";
 
 function App() {
   function handleClick() {
@@ -39,6 +40,11 @@ function App() {
   // section for albums
   const fetchAllAlbums = fetch(
     "https://jsonplaceholder.typicode.com/albums",
+  ).then((res) => res.json());
+
+  // section for photos
+  const fetchAllPhotos = fetch(
+    "https://jsonplaceholder.typicode.com/photos",
   ).then((res) => res.json());
 
   return (
@@ -150,7 +156,25 @@ function App() {
               </p>
             }
           >
-           <Albums fetchAlbums={fetchAllAlbums} />
+            <Albums fetchAlbums={fetchAllAlbums} />
+          </Suspense>
+
+          {/* section for photos */}
+          <Suspense
+            fallback={
+              <p
+                style={{
+                  marginTop: "30px",
+                  border: "2px dotted yellow",
+                  borderRadius: "10px",
+                  padding: "40px",
+                }}
+              >
+                photos data coming...
+              </p>
+            }
+          >
+            <Photos fetchPhotos={fetchAllPhotos} />
           </Suspense>
         </div>
       </section>
