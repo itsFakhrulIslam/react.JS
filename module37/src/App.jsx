@@ -8,6 +8,7 @@ import Comments from "./Comments";
 import Albums from "./Albums";
 import Photos from "./Photos";
 import Todos from "./Todos";
+import Event from "./Event";
 
 // section for todos
 const fetchAllTodos = async () => {
@@ -94,9 +95,9 @@ function App() {
             </button>
           </div>
 
-          {/* <CountBtn /> */}
+          <CountBtn />
 
-          {/* <Batsman /> */}
+          <Batsman />
 
           {/* section for users */}
           <Suspense
@@ -205,6 +206,9 @@ function App() {
           >
             <Todos fetchTodosData={todosPromise} />
           </Suspense>
+
+          {/* event tester */}
+          <Event />
         </div>
       </section>
     </>
