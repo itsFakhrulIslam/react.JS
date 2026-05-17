@@ -9,6 +9,7 @@ import Albums from "./Albums";
 import Photos from "./Photos";
 import Todos from "./Todos";
 import Event from "./Event";
+import NumCounter from "./NumCounter";
 
 // section for todos
 const fetchAllTodos = async () => {
@@ -209,6 +210,9 @@ function App() {
 
           {/* event tester */}
           <Event />
+
+          {/* practice projects */}
+          <NumCounter />
         </div>
       </section>
     </>
