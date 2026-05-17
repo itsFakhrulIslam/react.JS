@@ -1,10 +1,10 @@
 import React, { use } from "react";
 
 export default function Albums({ fetchAlbums }) {
-  console.log(fetchAlbums);
+  // console.log(fetchAlbums);
 
   const dataFetched = use(fetchAlbums);
-  console.log(dataFetched);
+  // console.log(dataFetched);
   
 
   return (

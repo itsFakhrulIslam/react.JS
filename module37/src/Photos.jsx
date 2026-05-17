@@ -1,10 +1,10 @@
 import React, { use } from "react";
 
 export default function Photos({ fetchPhotos }) {
-  console.log(fetchPhotos);
+  // console.log(fetchPhotos);
 
   const dataFetched = use(fetchPhotos);
-  console.log(dataFetched);
+  // console.log(dataFetched);
 
   return (
     <div

@@ -7,6 +7,14 @@ import Posts from "./Posts";
 import Comments from "./Comments";
 import Albums from "./Albums";
 import Photos from "./Photos";
+import Todos from "./Todos";
+
+// section for todos
+const fetchAllTodos = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  return res.json();
+};
+// console.log(fetchAllTodos());
 
 function App() {
   function handleClick() {
@@ -46,6 +54,9 @@ function App() {
   const fetchAllPhotos = fetch(
     "https://jsonplaceholder.typicode.com/photos",
   ).then((res) => res.json());
+
+  const fetchTodosData = fetchAllTodos();
+  // console.log("here is data", fetchTodosData);
 
   return (
     <>
@@ -175,6 +186,24 @@ function App() {
             }
           >
             <Photos fetchPhotos={fetchAllPhotos} />
+          </Suspense>
+
+          {/* section for todos */}
+          <Suspense
+            fallback={
+              <p
+                style={{
+                  marginTop: "30px",
+                  border: "2px dotted yellow",
+                  borderRadius: "10px",
+                  padding: "40px",
+                }}
+              >
+                todos data comming...
+              </p>
+            }
+          >
+            <Todos fetchTodosData={fetchTodosData} />
           </Suspense>
         </div>
       </section>

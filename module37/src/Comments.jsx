@@ -2,10 +2,10 @@ import React from "react";
 import { use } from "react";
 
 export default function Comments({ fetchComments }) {
-  console.log(fetchComments);
+  // console.log(fetchComments);
 
   const dataFetched = use(fetchComments);
-  console.log(dataFetched[1].body);
+  // console.log(dataFetched[1].body);
 
   return (
     <div

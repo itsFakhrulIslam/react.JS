@@ -1,10 +1,10 @@
 import React, { use } from "react";
 
 export default function Posts({ fetchPosts }) {
-  console.log(fetchPosts);
+  // console.log(fetchPosts);
 
   const dataFetched = use(fetchPosts);
-  console.log(dataFetched);
+  // console.log(dataFetched);
 
   return (
     <div

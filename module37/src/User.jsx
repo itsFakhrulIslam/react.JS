@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function User({ passUser }) {
-  console.log(passUser);
+  // console.log(passUser);
 
   return (
     <div
