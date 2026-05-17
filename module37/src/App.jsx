@@ -5,6 +5,7 @@ import CountBtn from "./CountBtn";
 import Users from "./Users";
 import Posts from "./Posts";
 import Comments from "./Comments";
+import Albums from "./Albums";
 
 function App() {
   function handleClick() {
@@ -33,6 +34,11 @@ function App() {
   // section for comments
   const fetchAllComments = fetch(
     "https://jsonplaceholder.typicode.com/comments",
+  ).then((res) => res.json());
+
+  // section for albums
+  const fetchAllAlbums = fetch(
+    "https://jsonplaceholder.typicode.com/albums",
   ).then((res) => res.json());
 
   return (
@@ -127,6 +133,24 @@ function App() {
             }
           >
             <Comments fetchComments={fetchAllComments} />
+          </Suspense>
+
+          {/* section for albums */}
+          <Suspense
+            fallback={
+              <p
+                style={{
+                  marginTop: "30px",
+                  border: "2px dotted yellow",
+                  borderRadius: "10px",
+                  padding: "40px",
+                }}
+              >
+                albums data coming...
+              </p>
+            }
+          >
+           <Albums fetchAlbums={fetchAllAlbums} />
           </Suspense>
         </div>
       </section>
