@@ -4,7 +4,7 @@ export default function Todos({ fetchTodosData }) {
 //   console.log(fetchTodosData);
 
   const dataFetched = use(fetchTodosData);
-  console.log(dataFetched);
+//   console.log(dataFetched);
 
   return (
     <div

@@ -55,7 +55,7 @@ function App() {
     "https://jsonplaceholder.typicode.com/photos",
   ).then((res) => res.json());
 
-  const fetchTodosData = fetchAllTodos();
+  const todosPromise = fetchAllTodos();
   // console.log("here is data", fetchTodosData);
 
   return (
@@ -203,7 +203,7 @@ function App() {
               </p>
             }
           >
-            <Todos fetchTodosData={fetchTodosData} />
+            <Todos fetchTodosData={todosPromise} />
           </Suspense>
         </div>
       </section>
