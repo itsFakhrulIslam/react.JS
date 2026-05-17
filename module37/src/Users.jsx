@@ -15,7 +15,7 @@ export default function Users({ fetchUsers }) {
       }}
     >
       <h1>Show All Users</h1>
-      <p>Total Users:{dataFetched.length} </p>
+      <p>Total Users: {dataFetched.length} </p>
     </div>
   );
 }
