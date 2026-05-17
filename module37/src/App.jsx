@@ -3,6 +3,7 @@ import "./App.css";
 import Batsman from "./Batsman";
 import CountBtn from "./CountBtn";
 import Users from "./Users";
+import Posts from "./Posts";
 
 function App() {
   function handleClick() {
@@ -21,6 +22,16 @@ function App() {
   // section for users
   const fetchAllUsers = fetch(
     "https://jsonplaceholder.typicode.com/users",
+  ).then((res) => res.json());
+
+  // section for posts
+  const fetchAllPosts = fetch(
+    "https://jsonplaceholder.typicode.com/posts",
+  ).then((res) => res.json());
+  
+  // section for comments
+  const fetchAllComments = fetch(
+    "https://jsonplaceholder.typicode.com/comments",
   ).then((res) => res.json());
 
   return (
@@ -59,9 +70,9 @@ function App() {
             </button>
           </div>
 
-          <CountBtn />
+          {/* <CountBtn /> */}
 
-          <Batsman />
+          {/* <Batsman /> */}
 
           {/* section for users */}
           <Suspense
@@ -80,6 +91,27 @@ function App() {
           >
             <Users fetchUsers={fetchAllUsers} />
           </Suspense>
+
+          {/* section for posts */}
+          <Suspense
+            fallback={
+              <p
+                style={{
+                  marginTop: "30px",
+                  border: "2px dotted yellow",
+                  borderRadius: "10px",
+                  padding: "40px",
+                }}
+              >
+                posts data coming...
+              </p>
+            }
+          >
+            <Posts fetchPosts={fetchAllPosts} />
+          </Suspense>
+
+          {/* section for comments */}
+          
         </div>
       </section>
     </>
