@@ -10,6 +10,7 @@ import Photos from "./Photos";
 import Todos from "./Todos";
 import Event from "./Event";
 import NumCounter from "./NumCounter";
+import ShowHide from "./ShowHide";
 
 // section for todos
 const fetchAllTodos = async () => {
@@ -213,6 +214,8 @@ function App() {
 
           {/* practice projects */}
           <NumCounter />
+
+          <ShowHide />
         </div>
       </section>
     </>
