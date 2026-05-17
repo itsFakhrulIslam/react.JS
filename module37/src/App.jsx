@@ -20,7 +20,7 @@ function App() {
 
   // section for users
   const fetchAllUsers = fetch(
-    "https://jsonplaceholder.typicode.com/posts",
+    "https://jsonplaceholder.typicode.com/users",
   ).then((res) => res.json());
 
   return (

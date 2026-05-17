@@ -1,7 +1,7 @@
 import React, { use } from "react";
 
 export default function Users({ fetchUsers }) {
-  //   console.log(fetchUsers);
+    console.log(fetchUsers);
 
   const dataFetched = use(fetchUsers);
 
@@ -15,7 +15,7 @@ export default function Users({ fetchUsers }) {
       }}
     >
       <h1>Show All Users</h1>
-      <p>Total Users: </p>
+      <p>Total Users:{dataFetched.length} </p>
     </div>
   );
 }
