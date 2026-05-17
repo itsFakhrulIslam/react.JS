@@ -4,6 +4,7 @@ import Batsman from "./Batsman";
 import CountBtn from "./CountBtn";
 import Users from "./Users";
 import Posts from "./Posts";
+import Comments from "./Comments";
 
 function App() {
   function handleClick() {
@@ -28,7 +29,7 @@ function App() {
   const fetchAllPosts = fetch(
     "https://jsonplaceholder.typicode.com/posts",
   ).then((res) => res.json());
-  
+
   // section for comments
   const fetchAllComments = fetch(
     "https://jsonplaceholder.typicode.com/comments",
@@ -111,7 +112,7 @@ function App() {
           </Suspense>
 
           {/* section for comments */}
-          
+          <Comments />
         </div>
       </section>
     </>

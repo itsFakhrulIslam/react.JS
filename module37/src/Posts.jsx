@@ -16,7 +16,7 @@ export default function Posts({ fetchPosts }) {
       }}
     >
       <h1>Show All Posts</h1>
-      <p>Total Posts:{} </p>
+      <p>Total Posts: {dataFetched.length} </p>
     </div>
   );
 }
