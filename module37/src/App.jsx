@@ -11,6 +11,7 @@ import Todos from "./Todos";
 import Event from "./Event";
 import NumCounter from "./NumCounter";
 import ShowHide from "./ShowHide";
+import Friend from "./Friend";
 
 // section for todos
 const fetchAllTodos = async () => {
@@ -18,6 +19,12 @@ const fetchAllTodos = async () => {
   return res.json();
 };
 // console.log(fetchAllTodos());
+
+const friendsFetch = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  return res.json();
+};
+// console.log(friendsFetch());
 
 function App() {
   function handleClick() {
@@ -60,6 +67,9 @@ function App() {
 
   const todosPromise = fetchAllTodos();
   // console.log("here is data", fetchTodosData);
+
+  const friendsPromise = friendsFetch();
+  // console.log("here is data", friendsPromise);
 
   return (
     <>
@@ -216,6 +226,23 @@ function App() {
           <NumCounter />
 
           <ShowHide />
+
+          <Suspense
+            fallback={
+              <p
+                style={{
+                  marginTop: "30px",
+                  border: "2px dotted yellow",
+                  borderRadius: "10px",
+                  padding: "40px",
+                }}
+              >
+                friends/user data coming...
+              </p>
+            }
+          >
+            <Friend friendsPromise={friendsPromise} />
+          </Suspense>
         </div>
       </section>
     </>
