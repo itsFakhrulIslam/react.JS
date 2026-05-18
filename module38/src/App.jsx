@@ -1,5 +1,6 @@
 import "./App.css";
 import Countries from "./components/Countries/Countries";
+import Test from "./Test";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
           <h1>Learn ReactJs module38</h1>
 
           <Countries />
+
+          <Test />
         </div>
       </section>
     </>
