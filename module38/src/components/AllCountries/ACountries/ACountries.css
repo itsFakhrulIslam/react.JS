@@ -1,3 +1,6 @@
 .allCountriesContainer {
-  border: 2px dotted yellowgreen;
+  margin: 20px;
+  border: 2px solid darkgrey;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }

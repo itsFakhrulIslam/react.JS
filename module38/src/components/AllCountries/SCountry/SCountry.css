@@ -1,0 +1,22 @@
+.sCountry {
+  padding: 10px;
+  margin: 10px;
+  border: 1px dashed darkgrey;
+}
+.sCountryImg {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.sButton {
+  padding: 5px 10px;
+  background-color: lightgrey;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+.visited {
+  background-color: green;
+  color: white;
+}
