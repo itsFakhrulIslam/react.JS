@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import "./App.css";
+import Users from "./components/users/Users";
 // import {
 //   add,
 //   divide,
@@ -41,13 +43,22 @@ function App() {
   ];
   console.log(users);
 
-  
+  // fetching data from public folder
+  const fetchUsersData = fetch("/usersData.json").then((response) =>
+    response.json(),
+  );
 
   return (
     <>
       <section id="center">
         <div>
           <h1>Learn ReactJs module39</h1>
+
+          {/* show fetched users data */}
+          <Suspense fallback={<div>Loading users data...</div>}>
+            {/* <button onClick={fetchUsersData}>Fetch Users Data</button> */}
+            <Users fetchUsersData={fetchUsersData} />
+          </Suspense>
         </div>
       </section>
     </>
