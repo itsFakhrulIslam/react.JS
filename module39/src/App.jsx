@@ -39,6 +39,9 @@ function App() {
     { id: 2, name: "fahim", email: "fahim@example.com" },
     { id: 3, name: "rakib", email: "rakib@example.com" },
   ];
+  console.log(users);
+
+  
 
   return (
     <>
