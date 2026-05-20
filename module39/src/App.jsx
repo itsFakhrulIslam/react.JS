@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import "./App.css";
-import Users from "./components/users/Users";
+import Bottles from "./components/bottlesCollection/bottles/Bottles";
+// import Users from "./components/users/Users";
 // import {
 //   add,
 //   divide,
@@ -36,17 +37,21 @@ function App() {
 
   // data fetching example
   //1 in memory data
-  const users = [
-    { id: 1, name: "miraj", email: "miraj@example.com" },
-    { id: 2, name: "fahim", email: "fahim@example.com" },
-    { id: 3, name: "rakib", email: "rakib@example.com" },
-  ];
-  console.log(users);
+  // const users = [
+  //   { id: 1, name: "miraj", email: "miraj@example.com" },
+  //   { id: 2, name: "fahim", email: "fahim@example.com" },
+  //   { id: 3, name: "rakib", email: "rakib@example.com" },
+  // ];
+  // console.log(users);
 
   // fetching data from public folder
-  const fetchUsersData = fetch("/usersData.json").then((response) =>
+  // const fetchUsersData = fetch("/usersData.json").then((response) =>
+  //   response.json(),
+  // );
+
+  const fetchBottlesData = fetch("/bottles.json").then((response) =>
     response.json(),
-  );
+  );  
 
   return (
     <>
@@ -55,9 +60,13 @@ function App() {
           <h1>Learn ReactJs module39</h1>
 
           {/* show fetched users data */}
-          <Suspense fallback={<div>Loading users data...</div>}>
-            {/* <button onClick={fetchUsersData}>Fetch Users Data</button> */}
+          {/* <Suspense fallback={<div>Loading users data...</div>}>
             <Users fetchUsersData={fetchUsersData} />
+          </Suspense> */}
+
+          {/* show fetched bottles data */}
+          <Suspense fallback={<div>Loading bottles data...</div>}>
+            <Bottles fetchBottlesData={fetchBottlesData} />
           </Suspense>
         </div>
       </section>
