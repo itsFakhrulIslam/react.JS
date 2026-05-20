@@ -32,7 +32,14 @@ function App() {
   // const sayHello = sayHelloToNewMember("miraj");
   // console.log("sayHelloToNewMember", sayHello);
 
-  
+  // data fetching example
+  //1 in memory data
+  const users = [
+    { id: 1, name: "miraj", email: "miraj@example.com" },
+    { id: 2, name: "fahim", email: "fahim@example.com" },
+    { id: 3, name: "rakib", email: "rakib@example.com" },
+  ];
+
   return (
     <>
       <section id="center">
