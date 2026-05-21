@@ -1,15 +1,19 @@
-import React from "react";
+import "./Bottle.css";
 
-const Bottle = ({ bottle }) => {
+const Bottle = ({ bottle, onBuy }) => {
   //   console.log(bottle);
 
-  const { name, img, price } = bottle;
+  const { name, img, price, stock } = bottle;
 
   return (
-    <div>
+    <div className="card">
+      <img src={img} alt={name} />
       <h2>{name}</h2>
-      <img src={img} alt={name} width="200" />
-      <p>Price: ${price.toFixed(2)}</p>
+      <p>Price: ${price}</p>
+      <p>Remaining: {stock}</p>
+      <button className="buyButton" onClick={() => onBuy(bottle)}>
+        Buy Now
+      </button>
     </div>
   );
 };
