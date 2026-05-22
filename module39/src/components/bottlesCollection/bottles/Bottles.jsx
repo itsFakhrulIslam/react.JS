@@ -1,6 +1,10 @@
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Bottle from "../bottle/Bottle";
 import "./Bottles.css";
+import {
+  getToLocalStorage,
+  setToLocalStorage,
+} from "../../../utils/localStorage/localStorage";
 
 const Bottles = ({ fetchBottlesData }) => {
   //   console.log(fetchBottlesData);
@@ -17,7 +21,34 @@ const Bottles = ({ fetchBottlesData }) => {
     // console.log(newBuyBottles);
 
     setBuyBottles(newBuyBottles);
+
+    // save the bottles id in the local storage
+    setToLocalStorage(bottle.id);
   };
+
+  // useeffect use for get bottles data and show in ui
+  useEffect(() => {
+    const storedCartIds = getToLocalStorage();
+    // console.log(storedCartIds, fetchBottlesDataArray);
+
+    const storedCart = [];
+
+    for (const id of storedCartIds) {
+      // console.log(id);
+
+      const cartBottles = fetchBottlesDataArray.find(
+        (bottle) => bottle.id === id,
+      );
+
+      if (cartBottles) {
+        storedCart.push(cartBottles);
+      }
+    }
+
+    // console.log(storedCart);
+
+    setBuyBottles(storedCart);
+  }, [fetchBottlesDataArray]);
 
   return (
     <>
