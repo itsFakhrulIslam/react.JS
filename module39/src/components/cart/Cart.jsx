@@ -1,4 +1,3 @@
-import React from "react";
 import "./cart.css";
 
 const Cart = ({ buyBottles, removeBottleHandler }) => {
