@@ -3,6 +3,7 @@ import Bottle from "../bottle/Bottle";
 import "./Bottles.css";
 import {
   getToLocalStorage,
+  removeCartLocalStorage,
   setToLocalStorage,
 } from "../../../utils/localStorage/localStorage";
 import Cart from "../../cart/Cart";
@@ -33,6 +34,8 @@ const Bottles = ({ fetchBottlesData }) => {
     const removeNewCart = buyBottles.filter((bottle) => bottle.id !== id);
 
     setBuyBottles(removeNewCart);
+
+    removeCartLocalStorage(id);
   };
 
   // useeffect use for get bottles data and show in ui
