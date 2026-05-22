@@ -5,6 +5,7 @@ import {
   getToLocalStorage,
   setToLocalStorage,
 } from "../../../utils/localStorage/localStorage";
+import Cart from "../../cart/Cart";
 
 const Bottles = ({ fetchBottlesData }) => {
   //   console.log(fetchBottlesData);
@@ -24,6 +25,14 @@ const Bottles = ({ fetchBottlesData }) => {
 
     // save the bottles id in the local storage
     setToLocalStorage(bottle.id);
+  };
+
+  const removeBottleHandler = (id) => {
+    console.log("remove item from the cart", id);
+
+    const removeNewCart = buyBottles.filter((bottle) => bottle.id !== id);
+
+    setBuyBottles(removeNewCart);
   };
 
   // useeffect use for get bottles data and show in ui
@@ -54,6 +63,12 @@ const Bottles = ({ fetchBottlesData }) => {
     <>
       <h1>Total Bottles: {fetchBottlesDataArray.length} </h1>
       <h1>Buy Bottles: {buyBottles.length} </h1>
+      <div>
+        <Cart
+          buyBottles={buyBottles}
+          removeBottleHandler={removeBottleHandler}
+        />
+      </div>
       <div className="bottleContainer">
         {fetchBottlesDataArray.map((bottle) => (
           <Bottle key={bottle.id} bottle={bottle} onBuy={handleBuyBottle} />

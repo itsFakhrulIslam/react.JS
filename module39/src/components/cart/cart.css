@@ -1,0 +1,10 @@
+.pimgContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+.imgContainer img {
+  width: 50px;
+  height: auto;
+}
