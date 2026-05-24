@@ -5,6 +5,7 @@ const AllPlayers = ({ onPromiseData }) => {
   //   console.log(onPromiseData);
 
   const allPlayersData = use(onPromiseData);
+  console.log(allPlayersData);
 
   return (
     <div className="max-w-300 mx-auto">
