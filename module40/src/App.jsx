@@ -25,7 +25,7 @@ function App() {
 
       {/* fetched data passing and loading state */}
       <Suspense fallback={<div>Loading players all data...</div>}>
-        <AllPlayers />
+        <AllPlayers onPromiseData={promiseData} />
       </Suspense>
       <SelectPlayers />
     </>
