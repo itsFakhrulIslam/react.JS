@@ -1,4 +1,5 @@
 import { use } from "react";
+import Player from "./Player";
 
 const AllPlayers = ({ onPromiseData }) => {
   //   console.log(onPromiseData);
@@ -6,11 +7,8 @@ const AllPlayers = ({ onPromiseData }) => {
   const allPlayersData = use(onPromiseData);
 
   return (
-    <div>
-      <p> all players</p>
-      {allPlayersData.map((player, index) => (
-        <p key={index}>{player.name}</p>
-      ))}
+    <div className="max-w-300 mx-auto">
+      <Player onPlayer={allPlayersData} />
     </div>
   );
 };

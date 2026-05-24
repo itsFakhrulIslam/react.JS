@@ -23,6 +23,8 @@ function App() {
     <>
       <Navbar />
 
+      <h1>Available Players / Selected Players</h1>
+      
       {/* fetched data passing and loading state */}
       <Suspense fallback={<div>Loading players all data...</div>}>
         <AllPlayers onPromiseData={promiseData} />
