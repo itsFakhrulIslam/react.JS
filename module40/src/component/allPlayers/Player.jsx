@@ -19,7 +19,7 @@ const Player = ({ onPlayer }) => {
     <>
       {onPlayer.map((player, index) => (
         <div
-          className="card bg-white text-black w-96 shadow-sm p-6"
+          className="card bg-white text-black w-96 shadow-2xl p-6"
           key={index}
         >
           <figure>

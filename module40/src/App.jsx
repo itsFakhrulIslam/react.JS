@@ -38,14 +38,14 @@ function App() {
         <div className="">
           <button
             onClick={handleTabToggle}
-            className="p-3 shadow-2xl cursor-pointer shadow-amber-300 bg-blue-500 text-black font-bold rounded-l-xl"
+            className={`p-3 cursor-pointer ${activeTab ? "bg-blue-500 text-white" : "bg-gray-200 text-black"} font-bold rounded-l-xl`}
           >
             Available
           </button>
 
           <button
             onClick={handleTabToggle}
-            className="p-3 shadow-2xl cursor-pointer shadow-amber-300 font-bold rounded-r-xl"
+            className={`p-3 cursor-pointer ${!activeTab ? "bg-blue-500 text-white" : "bg-gray-200 text-black"} font-bold rounded-r-xl`}
           >
             Selected<span>(0)</span>
           </button>
