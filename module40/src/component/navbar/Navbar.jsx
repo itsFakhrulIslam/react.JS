@@ -10,7 +10,7 @@ const Navbar = () => {
           </a>
         </div>
         <div className="flex-none">
-          <span>60,000,000,000 </span>
+          <span>60000000000 </span>
           <span>🪙</span>
         </div>
       </div>

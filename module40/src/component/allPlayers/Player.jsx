@@ -1,5 +1,6 @@
 import userLogo from "../../assets/user.png";
 import flagLogo from "../../assets/flags.png";
+import { useState } from "react";
 
 const Player = ({ onPlayer }) => {
   // console.log(onPlayer);
@@ -14,6 +15,9 @@ const Player = ({ onPlayer }) => {
   //   price,
   //   image_url,
   // } = onPlayer;
+
+  // player selected state
+  const [isSelected, setIsSelected] = useState(false);
 
   return (
     <>
@@ -46,7 +50,7 @@ const Player = ({ onPlayer }) => {
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-2"> 
             <div className="flex justify-between font-bold">
               <span>ratings:</span>
               <span>{player.rating}</span>
@@ -59,7 +63,12 @@ const Player = ({ onPlayer }) => {
 
             <div className="flex items-center justify-between">
               <p className="font-bold">Price: {player.price} Core</p>
-              <button className="btn">Choose Player</button>
+              <button
+                className={`btn ${isSelected ? "bg-blue-500 text-white" : " text-black"}`}
+                onClick={() =>setIsSelected(true)}
+              >
+                {isSelected ? "Selected" : "Choose Player"}
+              </button>
             </div>
           </div>
         </div>
