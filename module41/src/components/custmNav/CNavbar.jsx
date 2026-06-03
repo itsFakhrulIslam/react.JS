@@ -41,9 +41,9 @@ const CNavbar = () => {
           className="cursor-pointer md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {!isMenuOpen ? <X /> : <Menu />}
+          {!isMenuOpen ? <Menu /> : <X />}
         </span>
-        <ul className="md:hidden">{items}</ul>
+        <ul className={`md:hidden absolute duration-1000 bg-gray-800 text-white px-4  ${isMenuOpen ? "left-10 top-18" : "left-10 -top-48"}`}>{items}</ul>
 
         <h3>My App</h3>
       </span>
