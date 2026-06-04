@@ -8,6 +8,7 @@ import Header from "./components/comp_collection/header/Header";
 import Footer from "./components/comp_collection/footer/Footer";
 import Skills from "./components/comp_collection/skills/Skills.jsx";
 import Servic from "./components/comp_collection/servic/Servic.jsx";
+import About from "./components/comp_collection/about/About.jsx";
 
 // for react router
 // import { createBrowserRouter } from "react-router";
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
       { path: "/footer", Component: Footer },
       { path: "/skills", Component: Skills },
       { path: "/services", Component: Servic },
+      { path: "/about", Component: About },
       { path: "/app", Component: App },
     ],
   },
