@@ -36,6 +36,13 @@ const router = createBrowserRouter([
     path: "/contact",
     element: <h1>this is the contact page</h1>,
   },
+  {
+    path: "/app",
+    element: <App />,
+  },{
+    path: "/apps",
+    Component: App,
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
