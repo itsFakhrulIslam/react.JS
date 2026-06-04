@@ -3,9 +3,11 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Header from "./components/comp_collection/header/Header.jsx";
-import RootDir from "./components/rootDirectory/RootDir.jsx";
-import Footer from "./components/comp_collection/footer/Footer.jsx";
+import RootDir from "./components/rootDirectory/RootDir";
+import Header from "./components/comp_collection/header/Header";
+import Footer from "./components/comp_collection/footer/Footer";
+import Skills from "./components/comp_collection/skills/Skills.jsx";
+import Servic from "./components/comp_collection/servic/Servic.jsx";
 
 // for react router
 // import { createBrowserRouter } from "react-router";
@@ -52,11 +54,13 @@ import Footer from "./components/comp_collection/footer/Footer.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: App,
+    Component: RootDir,
     children: [
-      { index: true, Component: RootDir },
-      { path: "/header", Component: Header },
+      { index: true, Component: Header },
       { path: "/footer", Component: Footer },
+      { path: "/skills", Component: Skills },
+      { path: "/services", Component: Servic },
+      { path: "/app", Component: App },
     ],
   },
 ]);
