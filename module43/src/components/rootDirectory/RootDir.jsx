@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 
 const RootDir = () => {
   return (
@@ -28,12 +28,12 @@ const RootDir = () => {
           </li> */}
 
           {/* dynamic navigation system with side no loading  */}
-          <Link to="/">Header</Link>
-          <Link to="/skills">Skills</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/about">About</Link>
-          <Link to="/footer">Footer</Link>
-          <Link to="/app">App</Link>
+          <NavLink to="/">Header</NavLink>
+          <NavLink to="/skills">Skills</NavLink>
+          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/footer">Footer</NavLink>
+          <NavLink to="/app">App</NavLink>
         </ul>
       </nav>
 
