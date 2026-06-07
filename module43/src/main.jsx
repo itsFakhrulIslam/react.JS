@@ -55,6 +55,8 @@ import Todos from "./components/comp_collection/todos/Todos.jsx";
 //   },
 // ]);
 
+const todosLoader = fetch("https://jsonplaceholder.typicode.com/todos").then((res) => res.json());
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -80,7 +82,7 @@ const router = createBrowserRouter([
         path: "/todos",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
-            <Todos />
+            <Todos todosLoader={todosLoader} />
           </Suspense>
         ),
       },
