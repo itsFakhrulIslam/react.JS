@@ -23,7 +23,7 @@ const User = ({ user }) => {
         to={`/users/${id}`}
         style={{ textDecoration: "none", color: "#007bff" }}
       >
-        View Details
+        <button>View Details</button>
       </Link>
     </div>
   );

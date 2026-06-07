@@ -3,7 +3,7 @@ import User from "./user/User";
 
 const Users = () => {
   const users = useLoaderData();
-  console.log(users);
+  // console.log(users);
 
   return (
     <>
