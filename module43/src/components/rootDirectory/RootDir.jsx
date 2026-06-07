@@ -37,6 +37,8 @@ const RootDir = () => {
           <NavLink to="/users">Users</NavLink>
           <NavLink to="/posts">Posts</NavLink>
           <NavLink to="/todos">Todos</NavLink>
+          <NavLink to="/albums">Albums</NavLink>
+          <NavLink to="/comments">Comments</NavLink>
         </ul>
       </nav>
 

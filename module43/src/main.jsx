@@ -12,6 +12,8 @@ import About from "./components/comp_collection/about/About.jsx";
 import Users from "./components/comp_collection/users/Users.jsx";
 import Posts from "./components/comp_collection/posts/Posts.jsx";
 import Todos from "./components/comp_collection/todos/Todos.jsx";
+import Albums from "./components/comp_collection/albums/Albums.jsx";
+import Comments from "./components/comp_collection/comments/Comments.jsx";
 
 // for react router
 // import { createBrowserRouter } from "react-router";
@@ -55,7 +57,17 @@ import Todos from "./components/comp_collection/todos/Todos.jsx";
 //   },
 // ]);
 
-const todosLoader = fetch("https://jsonplaceholder.typicode.com/todos").then((res) => res.json());
+const todosLoader = fetch("https://jsonplaceholder.typicode.com/todos").then(
+  (res) => res.json(),
+);
+
+const albumsLoader = fetch("https://jsonplaceholder.typicode.com/albums").then(
+  (res) => res.json(),
+);
+
+const commentsLoader = fetch(
+  "https://jsonplaceholder.typicode.com/comments",
+).then((res) => res.json());
 
 const router = createBrowserRouter([
   {
@@ -83,6 +95,22 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
             <Todos todosLoader={todosLoader} />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/albums",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Albums albumsLoader={albumsLoader} />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/comments",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Comments commentsLoader={commentsLoader} />
           </Suspense>
         ),
       },
