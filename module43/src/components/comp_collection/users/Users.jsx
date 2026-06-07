@@ -8,9 +8,13 @@ const Users = () => {
   return (
     <>
       <h1>users component page</h1>
-      {users.map((user) => (
-        <User key={user.id} user={user} />
-      ))}
+      <div
+        style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "16px", justifyContent: "center" }}
+      >
+        {users.map((user) => (
+          <User key={user.id} user={user} />
+        ))}
+      </div>
     </>
   );
 };
