@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -10,6 +10,8 @@ import Skills from "./components/comp_collection/skills/Skills.jsx";
 import Servic from "./components/comp_collection/servic/Servic.jsx";
 import About from "./components/comp_collection/about/About.jsx";
 import Users from "./components/comp_collection/users/Users.jsx";
+import Posts from "./components/comp_collection/posts/Posts.jsx";
+import Todos from "./components/comp_collection/todos/Todos.jsx";
 
 // for react router
 // import { createBrowserRouter } from "react-router";
@@ -68,6 +70,19 @@ const router = createBrowserRouter([
         path: "/users",
         loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
         Component: Users,
+      },
+      {
+        path: "/posts",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/posts"),
+        Component: Posts,
+      },
+      {
+        path: "/todos",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Todos />
+          </Suspense>
+        ),
       },
     ],
   },

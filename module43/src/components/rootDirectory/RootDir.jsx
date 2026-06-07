@@ -35,6 +35,8 @@ const RootDir = () => {
           <NavLink to="/footer">Footer</NavLink>
           <NavLink to="/app">App</NavLink>
           <NavLink to="/users">Users</NavLink>
+          <NavLink to="/posts">Posts</NavLink>
+          <NavLink to="/todos">Todos</NavLink>
         </ul>
       </nav>
 
