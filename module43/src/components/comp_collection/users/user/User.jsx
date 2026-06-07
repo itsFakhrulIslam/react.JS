@@ -1,16 +1,7 @@
+import { Link } from "react-router";
+
 const User = ({ user }) => {
-  const {
-    name,
-    username,
-    email,
-    address: { city },
-    address: {
-      geo: { lat },
-    },
-    phone,
-    website,
-    company: { name: companyName },
-  } = user;
+  const { id, name, username, email } = user;
 
   const userCardStyle = {
     border: "1px solid #ccc",
@@ -28,6 +19,12 @@ const User = ({ user }) => {
       <h2>Name: {name}</h2>
       <p>Username: {username}</p>
       <p>Email: {email}</p>
+      <Link
+        to={`/users/${id}`}
+        style={{ textDecoration: "none", color: "#007bff" }}
+      >
+        View Details
+      </Link>
     </div>
   );
 };

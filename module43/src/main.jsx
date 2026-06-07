@@ -14,6 +14,7 @@ import Posts from "./components/comp_collection/posts/Posts.jsx";
 import Todos from "./components/comp_collection/todos/Todos.jsx";
 import Albums from "./components/comp_collection/albums/Albums.jsx";
 import Comments from "./components/comp_collection/comments/Comments.jsx";
+import UserDetails from "./components/comp_collection/users/userDetails/UserDetails.jsx";
 
 // for react router
 // import { createBrowserRouter } from "react-router";
@@ -84,6 +85,12 @@ const router = createBrowserRouter([
         path: "/users",
         loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
         Component: Users,
+      },
+      {
+        path: "/users/:userId",
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/users`),
+        Component: UserDetails,
       },
       {
         path: "/posts",
