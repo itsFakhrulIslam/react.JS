@@ -9,6 +9,7 @@ import Footer from "./components/comp_collection/footer/Footer";
 import Skills from "./components/comp_collection/skills/Skills.jsx";
 import Servic from "./components/comp_collection/servic/Servic.jsx";
 import About from "./components/comp_collection/about/About.jsx";
+import Users from "./components/comp_collection/users/Users.jsx";
 
 // for react router
 // import { createBrowserRouter } from "react-router";
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
       { path: "/services", Component: Servic },
       { path: "/about", Component: About },
       { path: "/app", Component: App },
+      {
+        path: "/users",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+        Component: Users,
+      },
     ],
   },
 ]);
