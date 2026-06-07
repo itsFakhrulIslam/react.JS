@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 const PostDetails = () => {
   const postDetails = useLoaderData();
@@ -14,6 +14,9 @@ const PostDetails = () => {
       <p>
         <strong>Body:</strong> {body}
       </p>
+      <Link to="/posts">
+        <button>Go Back</button>
+      </Link>
     </div>
   );
 };
