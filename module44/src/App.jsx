@@ -1,4 +1,5 @@
 import "./App.css";
+import FamilyTree from "./components/familyTree/FamilyTree";
 import UnControlledForms from "./components/form_four/UnControlledForms";
 import Form1 from "./components/form_one/Form1";
 import ControlledForms from "./components/form_three/ControlledForms";
@@ -12,7 +13,7 @@ function App() {
       <section id="center">
         <div>
           <h1>Learn React module44</h1>
-          <h2>Explore the React form</h2>
+          {/* <h2>Explore the React form</h2> */}
 
           {/* simple Form */}
           {/* <Form1 /> */}
@@ -30,7 +31,10 @@ function App() {
           {/* <HookFroms /> */}
 
           {/* products manager / managements service here */}
-          <ProductManagement />
+          {/* <ProductManagement /> */}
+
+          {/* family tree manager */}
+          <FamilyTree />
         </div>
       </section>
     </>
