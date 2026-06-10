@@ -4,6 +4,7 @@ import Form1 from "./components/form_one/Form1";
 import ControlledForms from "./components/form_three/ControlledForms";
 import FromActionFromData from "./components/form_two/FromActionFromData";
 import HookFroms from "./components/hookFrom/HookFroms";
+import ProductManagement from "./components/productsManager/ProductManagement";
 
 function App() {
   return (
@@ -14,19 +15,22 @@ function App() {
           <h2>Explore the React form</h2>
 
           {/* simple Form */}
-          <Form1 />
+          {/* <Form1 /> */}
 
           {/* form action formdata */}
-          <FromActionFromData />
+          {/* <FromActionFromData /> */}
 
           {/* controlled form */}
-          <ControlledForms />
+          {/* <ControlledForms /> */}
 
           {/* un controlled form */}
-          <UnControlledForms />
+          {/* <UnControlledForms /> */}
 
           {/* hooksform */}
-          <HookFroms />
+          {/* <HookFroms /> */}
+
+          {/* products manager / managements service here */}
+          <ProductManagement />
         </div>
       </section>
     </>
