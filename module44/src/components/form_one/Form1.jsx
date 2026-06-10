@@ -1,3 +1,6 @@
+//^ form simple submit
+
+
 const Form1 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -7,7 +10,13 @@ const Form1 = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        border: "1px solid white",
+        padding: "20px",
+        marginBottom: "20px",
+      }}
+    >
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Enter your name" />
         <button type="submit">Submit</button>
