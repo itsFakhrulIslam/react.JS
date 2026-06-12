@@ -31,7 +31,7 @@ function App() {
           {/* <HookFroms /> */}
 
           {/* products manager / managements service here */}
-          {/* <ProductManagement /> */}
+          <ProductManagement />
 
           {/* family tree manager */}
           <FamilyTree />
