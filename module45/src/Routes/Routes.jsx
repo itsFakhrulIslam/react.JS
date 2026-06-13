@@ -4,6 +4,7 @@ import Error from "../pages/errorPage/Error";
 import Home from "../pages/home/Home";
 import About from "../pages/about/About";
 import BookDetails from "../pages/bookDetails/BookDetails";
+import Contact from "../pages/contact/Contact";
 
 // react router setups here
 export const router = createBrowserRouter([
@@ -22,8 +23,12 @@ export const router = createBrowserRouter([
         Component: About,
       },
       {
+        path: "/contact",
+        Component: Contact,
+      },
+      {
         path: "/bookDetails/:id",
-        loader: () => fetch("booksData.json"),
+        loader: () => fetch("./booksData.json"),
         Component: BookDetails,
       },
     ],
