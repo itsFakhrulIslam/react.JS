@@ -24,18 +24,20 @@ const Banner = () => {
               alt="book banners"
             />
             <div className="absolute bottom-0 right-30">
-              <img width={'150px'} src={bookImage1} alt="book banners" />
+              <img width={"150px"} src={bookImage1} alt="book banners" />
             </div>
           </div>
 
           <div className="flex-1">
-            <h1 className="text-5xl font-bold">Box Office News!</h1>
+            <h1 className="text-5xl font-bold">
+              Books to freshen up your bookshelf
+            </h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn btn-primary">View the List</button>
           </div>
         </div>
       </div>

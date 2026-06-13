@@ -2,7 +2,6 @@ import { Star } from "lucide-react";
 import { Link } from "react-router";
 
 const Book = ({ book }) => {
-  console.log(book);
 
   const {
     bookId,
@@ -10,11 +9,9 @@ const Book = ({ book }) => {
     bookName,
     category,
     image,
-    publisher,
     rating,
     tags,
     totalPages,
-    yearOfPublishing,
   } = book;
 
   return (
