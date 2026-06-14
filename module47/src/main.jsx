@@ -4,11 +4,22 @@ import "./index.css";
 
 // react router setup here
 import { createBrowserRouter, RouterProvider } from "react-router";
+import Root from "./layout/Root";
+import Home from "./components/home/Home";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
+import Skills from "./components/skills/Skills";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>hello welcome to react world.</h1>,
+    Component: Root,
+    children: [
+      { index: true, Component: Home },
+      { path: "/about", Component: About },
+      { path: "/skills", Component: Skills },
+      { path: "/contact", Component: Contact },
+    ],
   },
 ]);
 
