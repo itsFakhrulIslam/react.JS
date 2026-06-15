@@ -10,6 +10,7 @@ import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Skills from "./components/skills/Skills";
 import Login from "./components/login/Login";
+import GitLogin from "./components/gitLogin/GitLogin";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/skills", Component: Skills },
       { path: "/contact", Component: Contact },
       { path: "/login", Component: Login },
+      { path: "/gitLogin", Component: GitLogin },
     ],
   },
 ]);

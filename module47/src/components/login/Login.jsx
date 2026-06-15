@@ -1,5 +1,5 @@
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { auth } from "../../firebase/firebase.init_config";
+import { auth } from "../../firebase/firebase._config";
 import {useState } from "react";
 
 const gooleProvider = new GoogleAuthProvider();
