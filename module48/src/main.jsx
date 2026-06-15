@@ -12,6 +12,7 @@ const router = createBrowserRouter([
     Component: App,
   },
 ]);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
