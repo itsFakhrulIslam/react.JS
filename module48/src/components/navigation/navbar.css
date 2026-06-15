@@ -1,0 +1,7 @@
+.navStyle {
+  display: flex;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  text-transform: capitalize;
+}
