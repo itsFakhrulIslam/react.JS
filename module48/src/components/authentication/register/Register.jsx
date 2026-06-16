@@ -1,24 +1,34 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase/firebase.config";
+import { useState } from "react";
 
 const Register = () => {
+  const [userCreatedMassage, setUserCreatedMassage] = useState(false);
+  const [userCreatedError, setUserCreatedError] = useState("");
+
   const handleRegister = (e) => {
-    console.log("register click");
+    // console.log("register click");
 
     e.preventDefault();
-    console.log("form submitted");
+    // console.log("form submitted");
 
     const email = e.target.email.value;
     const pass = e.target.password.value;
-    console.log("get form data:", email, pass);
+    // console.log("get form data:", email, pass);
+
+    // state reset status: error, createed/success
+    setUserCreatedError("");
+    setUserCreatedMassage(false);
 
     createUserWithEmailAndPassword(auth, email, pass)
       .then((userInfo) => {
-        alert("user created");
+        setUserCreatedMassage(userInfo);
         console.log(userInfo.user);
+        e.target.reset();
       })
       .catch((err) => {
         console.log(err);
+        setUserCreatedError(err.message);
       });
   };
 
@@ -55,6 +65,12 @@ const Register = () => {
                     <a className="link link-hover">Forgot password?</a>
                   </div>
                   <button className="btn btn-neutral mt-4">Register</button>
+                  {userCreatedMassage && (
+                    <p className="text-green-600">user created succesfully</p>
+                  )}
+                  {userCreatedError && (
+                    <p className="text-red-600">{userCreatedError} </p>
+                  )}
                 </fieldset>
               </form>
             </div>
