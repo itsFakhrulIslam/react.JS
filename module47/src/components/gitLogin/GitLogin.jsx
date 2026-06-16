@@ -93,7 +93,7 @@ const GitLogin = () => {
         {userInfo && (
           <div className="">
             <h1>Name: {userInfo.user.displayName}</h1>
-            <h1>email: {userInfo.user.email}</h1>
+            <h1>userId: {userInfo.user.uid}</h1>
             <img src={userInfo.user.photoURL} alt="" />
           </div>
         )}
