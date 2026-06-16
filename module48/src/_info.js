@@ -17,5 +17,6 @@
  * 6. enabled auth method
  * 7. go to selected auth documentation
  * 8. initialization selected auths with export auth
- * 9. 
+ * 9. go to selected specific auths (google, github etc)
+ * 10. 
  */
