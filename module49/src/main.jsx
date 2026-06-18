@@ -6,6 +6,7 @@ import Root from "./layout/Root.jsx";
 import Home from "./components/home/Home.jsx";
 import Login from "./components/login/Login.jsx";
 import Register from "./components/register/Register.jsx";
+import AuthProvider from "./contexts/authContext/AuthProvider.jsx";
 
 // react router setup
 const router = createBrowserRouter([
@@ -22,6 +23,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 );
