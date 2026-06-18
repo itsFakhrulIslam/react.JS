@@ -1,8 +1,11 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router";
-import { auth } from "../../firebase/firebase.config";
+import { use } from "react";
+import { AuthContext } from "../../contexts/authContext/AuthContext";
 
 const Login = () => {
+  const { loginUser } = use(AuthContext);
+  console.log(loginUser);
+
   const handleLogin = (e) => {
     console.log("login btn clicked");
 
@@ -15,7 +18,7 @@ const Login = () => {
     console.log("get form data:", email, pass);
 
     // sign in existing users
-    signInWithEmailAndPassword(auth, email, pass)
+    loginUser(email, pass)
       .then((userData) => {
         console.log(userData.user);
         alert("user access his/her account");

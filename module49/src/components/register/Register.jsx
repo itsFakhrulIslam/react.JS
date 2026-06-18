@@ -4,10 +4,10 @@ import { AuthContext } from "../../contexts/authContext/AuthContext";
 
 const Register = () => {
   const { createUser } = use(AuthContext);
-  console.log("register", createUser);
+  // console.log("register", createUser);
 
   const handleRegister = (e) => {
-    console.log("register btn clicked");
+    // console.log("register btn clicked");
 
     // stop reloading site
     e.preventDefault();
@@ -22,6 +22,7 @@ const Register = () => {
     createUser(email, pass)
       .then((users) => {
         console.log("user created", users.user);
+        alert("user created successfully");
       })
       .catch((err) => {
         console.log(err);
