@@ -4,7 +4,7 @@ import { AuthContext } from "../../contexts/authContext/AuthContext";
 
 const Login = () => {
   const { loginUser } = use(AuthContext);
-  console.log(loginUser);
+  // console.log(loginUser);
 
   const handleLogin = (e) => {
     console.log("login btn clicked");
@@ -22,6 +22,7 @@ const Login = () => {
       .then((userData) => {
         console.log(userData.user);
         alert("user access his/her account");
+        // e.target.reset();
       })
       .catch((err) => {
         console.log(err);

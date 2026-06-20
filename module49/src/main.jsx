@@ -7,6 +7,10 @@ import Home from "./components/home/Home.jsx";
 import Login from "./components/login/Login.jsx";
 import Register from "./components/register/Register.jsx";
 import AuthProvider from "./contexts/authContext/AuthProvider.jsx";
+import Orders from "./components/privet/orders/Orders.jsx";
+import Profile from "./components/privet/profile/Profile.jsx";
+import PrivetRoute from "./routes/PrivetRoute.jsx";
+import Dashboard from "./components/dashboard/Dashboard.jsx";
 
 // react router setup
 const router = createBrowserRouter([
@@ -17,6 +21,30 @@ const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: "register", Component: Register },
       { path: "login", Component: Login },
+      {
+        path: "dashboard",
+        element: (
+          <PrivetRoute>
+            <Dashboard />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "orders",
+        element: (
+          <PrivetRoute>
+            <Orders />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "profile",
+        element: (
+          <PrivetRoute>
+            <Profile />
+          </PrivetRoute>
+        ),
+      },
     ],
   },
 ]);

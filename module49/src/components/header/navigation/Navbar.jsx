@@ -1,13 +1,38 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import "./navbar.css";
+import { use } from "react";
+import { AuthContext } from "../../../contexts/authContext/AuthContext";
 
 const Navbar = () => {
+  const { user, signOutUser } = use(AuthContext);
+  // console.log(signOutUser);
+  // console.log(user);
+
+  const handleLogout = () => {
+    signOutUser()
+      .then(() => {
+        console.log("signOut succesfully");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const links = (
     <>
       <nav className="flex gap-4 capitalize">
         <NavLink to="/">home</NavLink>
         <NavLink to="register">register</NavLink>
         <NavLink to="login">login</NavLink>
+        <NavLink to="dashboard">dashboard</NavLink>
+
+        {/* privet router setup here */}
+        {user && (
+          <>
+            <NavLink to="orders">orders</NavLink>
+            <NavLink to="profile">profile</NavLink>
+          </>
+        )}
       </nav>
     </>
   );
@@ -45,8 +70,17 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
+
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {user ? (
+          <a onClick={handleLogout} className="btn">
+            Sign Out
+          </a>
+        ) : (
+          <Link className="btn" to="/login">
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
